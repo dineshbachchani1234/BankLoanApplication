@@ -1,0 +1,29 @@
+<app-login-header></app-login-header>
+<!-- App login header is header which will present through out the app after LoggedIn into the application
+It will contain Welcome and Signout option -->
+<img class="c" src="assets/images/trans.webp">
+<!-- the page is in construction 
+will get back to this soo -->
+<div class="container">
+<div class="offset-lg-1 offset-md-1 offset-sm-1">
+    <h2 class="h">Transactions:</h2>
+    <table >
+        <!-- class="table table-striped table-responsive table-hover" -->
+        <tr>
+            <th>Transaction ID</th>
+            <th>Statement</th>
+            <th>Time</th>
+          </tr>
+    <tr *ngFor="let u of transaction">
+    <td>{{u.transaction_id}}</td>
+    <td>{{u.statement}}</td>
+    <td>{{u.time}}</td>
+    </tr>
+</table>
+<br/>
+<br/>
+<!-- back to the login page -->
+
+<a class="btn btn-warning" style="text-align: center;" routerLink="/login">Back to Menu</a> <br/><br/>
+</div>
+</div>

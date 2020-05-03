@@ -1,0 +1,82 @@
+<!-- header -->
+<div class="header">
+    <a href="#default" class="logo">INNOVIL BANK</a>
+    <div class="header-right">
+      <a class="active" href="#home">Home</a>
+      <a routerLink="/about">About Us</a>
+      <a routerLink="/why">Why Us</a>
+      <a routerLink="/contact">Contact Us</a>
+    </div>
+  </div>  
+    <div class="row">
+                <div class="col-md-5 col-lg-5 col-sm-5">
+            <br/>
+            <img class="home" src="assets/images/online.png" >        
+        </div>
+       
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <div class="col-lg-4 col-md-4 col-sm-4" style="margin-left: 10px;">
+       <br/>
+       
+       <p style="color:orangered;font-size:1cm;">Welcome to Innovil Bank</p>
+       <!-- login form to login the customer -->
+       <form [formGroup]="loginForm" (ngSubmit)="verifyLogin()">
+            <div class="form-group" style="color:slateblue;">
+                <!-- email address -->
+                <label for="email">Email Address : </label>
+                <input type="email" class="form-control" formControlName="email"
+                placeholder="abc@gmail.com" />
+    
+                <!-- Predefined Structural Directive -->
+                <!-- *ngIf, *ngFor, *ngSwitchCase -->
+                <div *ngIf="submitted && loginForm.controls.email.errors" class="error">
+                    <div class="text-danger"
+                    *ngIf="loginForm.controls.email.errors.required">
+                            Email is required ..
+                    </div>
+                </div>
+            </div> <!-- end of email -->
+            <div class="form-group">
+                <!-- password field -->
+                <label for="password">Password : </label>
+                <input type="password" class="form-control" formControlName="password"
+                placeholder="********" />
+                <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+                        <div class="text-danger"
+                        *ngIf="loginForm.controls.password.errors.required">
+                                Password is required ..
+                        </div>
+                    </div>
+            </div> <!-- end of password -->
+            <!-- logged In the user -->
+            <button class="btn btn-success">Login</button> &nbsp;
+            <!-- reset the data being entered -->
+            <button class="btn btn-danger" type="reset">Cancel</button>  &nbsp;
+            <!-- if user is not present route to the signup page -->
+            <a class="btn btn-info" routerLink="/signup">Create Account</a> <br/><br/>
+    
+            <br/><br/>
+            <div *ngIf="invalidLogin">
+                <div class="text-danger">
+                    Invalid Email or Password ..!
+                </div>
+            </div>
+        </form>
+     </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <div style="color:seagreen" class="col-lg-1 col-md-1 col-sm-1">
+            <br/>
+            <br/>
+           <mat-icon>phone</mat-icon><br/><br/>
+           <mat-icon>email</mat-icon><br/><br/> 
+           <mat-icon>face</mat-icon>
+
+        </div>
+        <div style ="color:sienna;" class="col-lg-1 col-md-1 col-sm-1">
+            <br/>
+                    <br/> 
+       <p class="p1">+91-7228988923</p>
+        <p class="p2">Innovil@gmail.com</p>
+        <p class="p2">Most trusted Bank</p>
+        </div>
+    </div>

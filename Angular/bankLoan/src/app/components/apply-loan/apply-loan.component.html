@@ -1,0 +1,61 @@
+<app-login-header></app-login-header>
+<!-- App login header is header which will present through out the app after LoggedIn into the application
+It will contain Welcome and Signout option -->
+<br/>
+<br/>
+<div class="col-md-10 col-lg-10">
+<img class="a1" src="assets/images/apply2.png">
+    <h3 class="add">Apply for the Loan</h3>
+    <br/>
+
+    <!-- Reactive Forms -->
+    <!-- Designing Add User Form -->
+    <form [formGroup]="addForm" (ngSubmit)="applyloan()">
+        <!-- Loan Amount Text Box -->
+        <div class="form-group row">
+            <label for="loan_amount" class="col-lg-4 text-right font-weight-bold">
+                Loan Amount* :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Enter your Loan amount" formControlName="loan_amount" maxlength="10" style="width: 50%;">
+
+                <div *ngIf="submitted && addForm.controls.loan_amount.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.loan_amount.errors.required">
+                       Loan Amount is required ..!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <!-- End of  Loan Amount Text Box -->
+
+        <!-- Duration of loan Text Box -->
+        <div class="form-group row">
+            <label for="duration" class="col-lg-4 text-right font-weight-bold">
+               Duration* :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Enter duration for the Loan" formControlName="duration" maxlength="2" style="width: 50%;">
+
+                <div *ngIf="submitted && addForm.controls.duration.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.duration.errors.required">
+                        Duration is required ..!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of duration text box -->
+       <br/>
+        <div class="r">
+            <!-- button to submit the button -->
+            <button class="btn btn-success" type="submit">Save</button> &nbsp; &nbsp;
+            <!-- reset will help to clear the data entered -->
+            <button class="btn btn-danger" type="reset">Cancel</button> &nbsp; &nbsp;
+            <!-- A link which will guide us back to the login page -->
+            <a class="btn btn-primary" routerLink="/login">Back to Menu</a>
+        </div>
+    </form>
+</div>
+

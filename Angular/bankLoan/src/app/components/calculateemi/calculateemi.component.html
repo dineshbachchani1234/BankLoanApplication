@@ -1,0 +1,51 @@
+<app-login-header></app-login-header>
+<!-- App login header is header which will present through out the app after LoggedIn into the application
+It will contain Welcome and Signout option -->
+<br/>
+<br/>
+<!-- Mat form for calculating the EMI for different loan amount and duration 
+It will then called calculateemi() and help to achieve the process-->
+
+<form class="example-form" [className]="'style2'" [formGroup]="calculateemiform" (ngSubmit)="calculateemi()" >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field class="example-full-width">
+            <mat-label class="i1">Loan Amount:</mat-label>
+          <input matInput placeholder="loan amount in rupees" formControlName="loan_amount" maxlength="10">
+          <mat-hint>loan amount</mat-hint>
+          <mat-error *ngIf="calculateemiform.get('loan_amount').hasError('required')">
+           Loan Amount is Required!
+          </mat-error>
+          <mat-error *ngIf="calculateemiform.get('loan_amount').hasError('pattern')">
+            Loan Amount should contain numericals only.
+          </mat-error>
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field class="example-full-width">
+            <mat-label class="i1">Duration:</mat-label>
+          <input matInput placeholder="loan amount in rupees" formControlName="duration" maxlength="2">
+          <mat-hint>duration in months</mat-hint>
+          <mat-error *ngIf="calculateemiform.get('duration').hasError('required')">
+           Loan Amount is Required!
+          </mat-error>
+          <mat-error *ngIf="calculateemiform.get('duration').hasError('pattern')">
+            Duration should contain numericals only.
+          </mat-error>
+        </mat-form-field>
+        <br/> <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- button to submit the button -->
+        <button class="btn btn-success" type="submit" id="save">Save</button>
+  &nbsp;&nbsp;
+  <!-- reset will help to clear the data entered -->
+  <button class="btn btn-danger" type="reset">Cancel</button> &nbsp; &nbsp;
+    <!-- A link which will guide us back to the login page -->
+  <button class="btn btn-primary" routerLink="/login">Back to Login</button>
+  
+  </form>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <h1 class="e1">EMI is: {{message}}</h1>
+  <!-- message will help to print the calculated EMI -->
+
+  <!-- <div class="col-lg-6 col-md-6 col-sm-6"> -->
+    <!-- <img class="i2" src="assets/images/add2.jpg"> -->
+  <!-- </div> -->

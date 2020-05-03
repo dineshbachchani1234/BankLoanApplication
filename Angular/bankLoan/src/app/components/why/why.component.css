@@ -1,0 +1,183 @@
+.icon-box-item {
+	margin-bottom: 30px;
+}
+
+.icon-box-item .ib-icon {
+	width: 76px;
+	height: 76px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	font-size: 39px;
+	color: #f43f00;
+	border: 3px solid #f43f00;
+	border-radius: 50%;
+	float: left;
+	margin-right: 20px;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.icon-box-item .ib-text {
+	overflow: hidden;
+    padding-top: 3px;
+    text-align: left;
+    margin-left: -6em;
+}
+ .staff
+{
+    border-radius: 1cm;
+    height: 5em;
+    width: 400%;
+
+}
+.credit
+{
+    border-radius: 1cm;
+    height: 12em;
+    width: 80%;
+    margin-left: 5em;
+    margin-top: -5em;
+} 
+.credittext
+{
+text-align: left;
+margin-left: 5em    ;
+font-size: 18px;
+} 
+.h2
+{
+	margin-top: 30px;
+    color: lightyellow;
+}
+.moneytext
+{
+color: maroon;
+will-change: scroll-position;
+}
+.creditdata
+{
+color: darkorange;
+margin-top: 0.5em;
+}
+.staffdata
+{
+    margin-left: 4em;
+color: slateblue;
+}
+.pstaff
+
+{
+	font-size: 20px;
+    margin-left: 5em;
+}
+.h3
+{
+	text-align: center;
+	color: darkmagenta;
+	margin-top: 40px;
+}
+.t1
+{
+	height: 40%;
+	width: 40%;
+	margin-left: 90px;
+	margin-bottom: 30px;
+	border-radius: 3cm;
+}
+.t2
+{
+	height: 40%;
+	width: 40%;
+	margin-left: 90px;
+	margin-bottom: 30px;
+	border-radius: 3cm;
+}
+.t3
+{
+	height: 40%;
+	width: 40%;
+	margin-left: 90px;
+	margin-bottom: 30px;
+	border-radius: 3cm;
+}
+.a1
+{
+	text-align: center;
+	color: darkred;
+}
+.w1
+{
+	height: 270%;
+	width: 370%;
+	margin-top: 0px;
+	margin-left: 50px;
+	border-radius: 1cm;
+}
+.w2
+{
+	height: 270%;
+	width: 370%;
+	margin-top: 0px;
+	margin-left: 50px;
+	border-radius: 1cm;
+}.w3
+{
+	height: 40%;
+	width: 65%;
+	margin-top: -85px;
+	margin-left: 50px;
+	border-radius: 1cm;
+}
+.test1
+{
+	font-size: 20px;
+}
+
+
+/* testimonials */
+.bg{
+    background-color: white;
+    background-size: cover;
+  }
+  
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  ng-template{
+    width: 50%;
+    height: 400px;
+  }
+  .testi
+  {
+    height: 100%;
+    width: 100%;
+
+  }
+  .testi2
+  {
+    height: 450px;
+    width: 700px;
+
+  }
+  .t{
+	  color: black;
+  }
+  .th1
+  {
+	  color: white;
+	  text-align: center;
+}
+hr.new1 {
+    border-top: 1px dashed rgb(252, 105, 105);
+	width: 40%;
+	margin-bottom: 30px;
+}

@@ -1,0 +1,26 @@
+<h3>User Information</h3>
+<p *ngIf="isValidFormSubmitted" class="success">
+	Form submitted successfully.
+</p>
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+	<table>
+		<tr>
+			<td>Select Profile: </td>
+			<td>
+				<select formControlName="profile" >
+					<option [ngValue]="null" disabled>Choose your profile</option>
+					<option *ngFor="let prf of allProfiles" [ngValue]="prf">
+						{{ prf.prName }}
+					</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button>Submit</button>
+				<button type="button" (click)="setDefaultValues()">Set Default</button>
+				<button type="button" (click)="resetForm(userForm)">Reset</button>
+			</td>
+		</tr>
+	</table>
+</form> 

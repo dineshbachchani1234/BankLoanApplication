@@ -1,0 +1,158 @@
+<!-- payment page -->
+<br />
+<br />
+<div class="row">
+    <h1 class="s1">Welcome to Payment Page</h1>
+    <div class="col-75">
+        <div class="container">
+            <form [formGroup]="paymentform" (ngSubmit)="payment()">
+
+                <div class="row">
+                    <div class="col-50">
+                        <br/>
+                        <br/>
+                        <div class="form-group row">
+                            <!-- first name field -->
+                            <label for="firstName" class="col-lg-4 text-right font-weight-bold">
+                                First Name :
+                            </label>
+
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control " placeholder="First Name"
+                                    formControlName="firstName" />
+
+                                <div *ngIf="submitted && paymentform.controls.firstName.errors">
+                                    <div class="text-danger" *ngIf="paymentform.controls.firstName.errors.required">
+                                        First Name is required ..!
+                                    </div>
+                                    <div class="text-danger" *ngIf="paymentform.controls.firstName.errors.pattern">
+                                        FirstName must begin with Capital letter and 15 characters long ..!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <!-- email id field -->
+                            <label for="email" class="col-lg-4 text-right font-weight-bold">
+                                Email ID :
+                            </label>
+                            <div class="col-lg-8">
+                                <input type="email" class="form-control " placeholder="example@gmail.com" formControlName="email">
+                                <div *ngIf="submitted && paymentform.controls.email.errors">
+                                    <div class="text-danger" *ngIf="paymentform.controls.email.errors.required">
+                                        Email ID is required ..!
+                                    </div>
+                                    <div class="text-danger" *ngIf="paymentform.controls.email.errors.email">
+                                        Invalid Email Address:
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <!-- exp month field -->
+                            <label for="expmonth" class="col-lg-4 text-right font-weight-bold" style="margin-top: 20px;">
+                               Exp Month :
+                            </label> 
+                            <div class="col-lg-8">
+                                <input style="margin-top: 20px;" type="text" class="form-control " placeholder="04" formControlName="expmonth" maxlength="2">
+                                
+                                <div *ngIf="submitted && paymentform.controls.expmonth.errors">
+                                    <div class="text-danger" *ngIf="paymentform.controls.expmonth.errors.required">
+                                        Exp Month is required ..!
+                                    </div>
+                                    <div class="text-danger" *ngIf="paymentform.controls.expmonth.errors.pattern">
+                                        Please Enter Valid Exp Month
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <!-- cvv field -->
+                            <label for="cvv" class="col-lg-4 text-right font-weight-bold">
+                                CVV:
+                            </label>
+
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control " placeholder="123" formControlName="cvv" maxlength="3">
+
+                                <div *ngIf="submitted && paymentform.controls.cvv.errors">
+                                    <div class="text-danger" *ngIf="paymentform.controls.cvv.errors.required">
+                                        CVV is required ..!
+                                    </div>
+                                    <div class="text-danger" *ngIf="paymentform.controls.cvv.errors.pattern">
+                                        Invalid CVV ..!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-50">
+                        <br/>
+                        <br/>
+                        <div class="form-group row">
+                            <!-- name on card field -->
+                            <label for="cardname" class= "col-lg-4 text-right font-weight-bold">
+                                Name on Card :
+                            </label>
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control " placeholder="Shyam Lal Mehra"
+                                    formControlName="cardname" />
+
+                                <div *ngIf="submitted && paymentform.controls.cardname.errors">
+                                    <div class="text-danger" *ngIf="paymentform.controls.cardname.errors.required">
+                                        Card Name is required ..!
+                                    </div>
+                                    <div class="text-danger" *ngIf="paymentform.controls.cardname.errors.pattern">
+                                        Invalid Card Name ..!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <!-- card number field -->
+                            <label for="cardnumber" class="col-lg-4 text-right font-weight-bold">
+                                Card Number :
+                            </label>
+
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control " placeholder="1111-2222-3333-4444" maxlength="16"
+                                    formControlName="cardnumber" />
+
+                                <div *ngIf="submitted && paymentform.controls.cardnumber.errors">
+                                    <div class="text-danger" *ngIf="paymentform.controls.cardnumber.errors.required">
+                                        Card Number is required ..!
+                                    </div>
+                                    <div class="text-danger" *ngIf="paymentform.controls.cardnumber.errors.pattern">
+                                        Please Enter Valid Card Number
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <!-- exp year field -->
+                            <label for="expyear" class="col-lg-4 text-right font-weight-bold">
+                                Exp Year :
+                            </label>
+
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control " placeholder="2022" formControlName="expyear" maxlength="4">
+
+                                <div *ngIf="submitted && paymentform.controls.expyear.errors">
+                                    <div class="text-danger" *ngIf="paymentform.controls.expyear.errors.required">
+                                       Exp Year is required ..!
+                                    </div>
+                                    <div class="text-danger" *ngIf="paymentform.controls.expyear.errors.pattern">
+                                        Invalid Exp Year..!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- button to save the details and done the payment -->
+                <button class="btn btn-outline-success " >Save</button>
+            </form>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,44 @@
+<app-login-header></app-login-header>
+<!-- App login header is header which will present through out the app after LoggedIn into the application
+It will contain Welcome and Signout option -->
+    <h1 class="h1">  </h1>
+<h3 class="h3">Your Current Balance is: Rs {{message}} /-</h3>
+
+
+  <div class="col-md-12 col-lg-12 col-sm-12">
+  <img class="a1" src="assets/images/add.png">
+      <!-- Mat form to add some money to the balance variable -->
+      <form class="example-form" [className]="'style2'" [formGroup]="check" (ngSubmit)="addingbalance()" >
+    
+        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+            <mat-form-field class="example-full-width">
+                <mat-label class="i1">Add Balance:</mat-label>
+            
+              <input matInput placeholder="Add Balance in rupees" formControlName="balance">
+              <mat-icon matSuffix>account_balance_wallet</mat-icon>
+              <mat-hint>User Name in characters only</mat-hint>
+              <mat-error *ngIf="check.get('balance').hasError('required')">
+                Balance is Required!
+              </mat-error>
+              <mat-error *ngIf="check.get('balance').hasError('minlength')">
+                First Name should be atleast 4 characters long!
+              </mat-error>
+          
+              <mat-error *ngIf="check.get('balance').hasError('maxlength')">
+               Balance can be atmax 20 characters long!
+              </mat-error>
+          <!-- Minimum value should be 10rs -->
+              <mat-error *ngIf="check.get('balance').hasError('pattern')">
+                Invalid Input(Minimum 10rs).
+              </mat-error>
+            </mat-form-field>
+
+            <br/> <br/>
+            <!-- button to submit the button -->
+      <button class="btn btn-success" type="submit" id="save">Save</button> &nbsp; &nbsp;
+        <!-- reset will help to clear the data entered -->
+      <button class="btn btn-danger" type="reset">Cancel</button> &nbsp; &nbsp;
+          <!-- A link which will guide us back to the login page -->
+      <a class="btn btn-warning" routerLink="/login">Back to Menu</a> <br/><br/>
+      </form>
+      </div>

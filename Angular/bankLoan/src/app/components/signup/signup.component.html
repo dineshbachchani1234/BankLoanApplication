@@ -1,0 +1,215 @@
+<app-header></app-header>
+<!-- App login header is header which will present through out the app after LoggedIn into the application
+It will contain Welcome and Signout option -->
+<br/>
+<br/>
+<!-- mat form for signup page 
+adding() will call for performing the action-->
+<form class="example-form" [className]="'style2'" [formGroup]="userAddressValidations" (ngSubmit)="adding()" >
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-form-field class="example-full-width">
+      <!-- name field -->
+        <mat-label class="i1">Your Name*:</mat-label>
+      <input matInput placeholder="First Name" formControlName="name">
+      <!-- mat icon is being used for displaying the small icons for better understanding for the user -->
+      <mat-icon matSuffix>person_outline</mat-icon>
+      <mat-hint>User Name in characters only</mat-hint>
+      <!-- validation such as required minlength and maxlength too -->
+      <mat-error *ngIf="userAddressValidations.get('name').hasError('required')">
+        First Name is Required!
+      </mat-error>
+      <mat-error *ngIf="userAddressValidations.get('name').hasError('minlength')">
+        First Name should be atleast 4 characters long!
+      </mat-error>
+  
+      <mat-error *ngIf="userAddressValidations.get('name').hasError('maxlength')">
+        First Name can be atmax 20 characters long!
+      </mat-error>
+  
+      <mat-error *ngIf="userAddressValidations.get('name').hasError('pattern')">
+        First Name must contains charatcers only.
+      </mat-error>
+      <!-- name field ends -->
+    </mat-form-field>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+      <mat-form-field class="example-full-width">
+        <!-- email address field -->
+        <mat-label class="i1">Email Address*:</mat-label>
+        <input matInput type="email" placeholder="Email Id" formControlName="email">
+        <mat-icon matSuffix>mail_outline</mat-icon>
+        <mat-hint>Input the fully qualified email address</mat-hint>
+        <mat-error *ngIf="userAddressValidations.get('email').hasError('required')">
+          Email ID is Required!
+        </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('email').hasError('minlength')">
+          Email id should be atleast 4 characters long!
+        </mat-error>
+    
+        <mat-error *ngIf="userAddressValidations.get('email').hasError('maxlength')">
+         Email ID can be atmax n characters long!
+        </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('email').hasError('pattern')">  
+          Email must follow this pattern!
+        </mat-error>
+        <!-- email address field ends -->
+      </mat-form-field>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field class="example-full-width">
+        <!-- password field -->
+        <mat-label class="i1">Password*:</mat-label>
+        <input matInput  type="password" placeholder="Password" formControlName="password">
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-hint>Do not share to anyone</mat-hint>
+        <mat-error *ngIf="userAddressValidations.get('password').hasError('required')">
+          Password is Required!
+        </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('password').hasError('minlength')">
+          Password should be atleast 8 characters long!
+        </mat-error>
+    
+        <mat-error *ngIf="userAddressValidations.get('password').hasError('maxlength')">
+          Password can be atmax 20 characters long!
+        </mat-error>
+    
+        <mat-error *ngIf="userAddressValidations.get('password').hasError('pattern')">
+        Password must follow this pattern!
+        </mat-error>
+        <!-- password field ends -->
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <mat-form-field class="example-full-width">
+        <!-- mobile number field -->
+        <mat-label class="i1">Mobile Number*:</mat-label>
+        <input matInput placeholder="ex- 8992716152" formControlName="mobile" maxlength="10">
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-hint>Enter 10 Digit Mobile Number</mat-hint>
+        <mat-error *ngIf="userAddressValidations.get('mobile').hasError('required')">
+          Mobile number is Required!
+        </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('mobile').hasError('minlength')">
+          Mobile numbershould be 10 numbers long!
+        </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('mobile').hasError('maxlength')">
+            Mobile numbershould be 10 numbers long!
+          </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('mobile').hasError('pattern')">
+          Mobile number must be in numbers only start from 6,7,8 or 9 and of 10 numbers long !
+        </mat-error>
+        mobile number field ends
+      </mat-form-field>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <mat-form-field class="example-full-width">
+        <!-- type of accound field -->
+        <mat-label class="i1">Type of Account*:</mat-label>
+        <input matInput placeholder="saving/current" formControlName="type" maxlength="7">
+        <mat-icon matSuffix>invert_colors</mat-icon>
+        <mat-hint>Either saving or current</mat-hint>
+        <mat-error *ngIf="userAddressValidations.get('type').hasError('required')">
+         Type is Required!
+        </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('type').hasError('minlength')">
+         Type should be atleast 6 characters long!
+        </mat-error>
+    
+        <mat-error *ngIf="userAddressValidations.get('type').hasError('maxlength')">
+         Type can be atmax 7 characters long!
+        </mat-error>
+    
+        <mat-error *ngIf="userAddressValidations.get('type').hasError('pattern')">
+         Type must follow this pattern!
+        </mat-error>
+        <!-- type of account field ends -->
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field class="example-full-width">
+        <!-- adhar field -->
+        <mat-label class="i1">Adhar Number*:</mat-label>
+        <input matInput placeholder="ex- 450076549021" formControlName="adhar" maxlength="12">
+        <mat-icon matSuffix>face</mat-icon>
+        <mat-hint>12 digit adhar number</mat-hint>
+        <mat-error *ngIf="userAddressValidations.get('adhar').hasError('required')">
+         Adhar number is Required!
+        </mat-error> 
+        <mat-error *ngIf="userAddressValidations.get('adhar').hasError('minlength')">
+          Adhar number should be 12 digits long!
+        </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('adhar').hasError('maxlength')">
+          Adhar number should be 12 digits long!
+         </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('adhar').hasError('pattern')">
+        Adhar number must follow this pattern!
+        </mat-error>
+        <!-- adhar field ends -->
+      </mat-form-field>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field class="example-full-width">
+        <!-- pan field -->
+        <mat-label class="i1">Pan Number*:</mat-label>
+        <input matInput placeholder="ex- GUJB171231" formControlName="pan">       
+        <mat-icon matSuffix>horizontal_split</mat-icon>
+        <mat-hint>Yor Pan Number</mat-hint>
+        <mat-error *ngIf="userAddressValidations.get('pan').hasError('required')">
+          Pan number is Required!
+        </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('pan').hasError('minlength')">
+          Pan Number should be atleast 4 characters long!
+        </mat-error>
+    
+        <mat-error *ngIf="userAddressValidations.get('pan').hasError('maxlength')">
+         Pan Number can be atmax n characters long!
+        </mat-error>
+    
+        <mat-error *ngIf="userAddressValidations.get('pan').hasError('pattern')">
+          Pan Number must follow this pattern!
+        </mat-error>
+        <!-- pan field ends -->
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field class="example-full-width">
+        <!-- balance field -->
+        <mat-label class="i1">Opening Balance*:</mat-label>
+        <input matInput placeholder="Minimum Rs1000" formControlName="balance" maxlength="7" >
+        <mat-icon matSuffix>account_balance</mat-icon>
+        <mat-hint>ex- Amount in rupees </mat-hint>
+        <mat-error *ngIf="userAddressValidations.get('balance').hasError('required')">
+        balance is Required!
+        </mat-error>
+        <mat-error *ngIf="userAddressValidations.get('balance').hasError('minlength')">
+          Balance should be atleast Rs 1000!
+        </mat-error>
+    
+        <mat-error *ngIf="userAddressValidations.get('balance').hasError('maxlength')">
+          Balance should be less than 1 crore!
+        </mat-error>
+    
+        <mat-error *ngIf="userAddressValidations.get('balance').hasError('pattern')">
+          Balance must follow contain numbers only!
+        </mat-error>
+        <!-- balance field ends -->
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- save button to save the inputs -->
+      <button class="btn btn-success" type="submit" id="save">save</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- to reset the data being entered -->
+      <button class="btn btn-danger" type="reset">Cancel</button> &nbsp; &nbsp; &nbsp;
+      <!-- to navigate to the login page -->
+      <a class="btn btn-warning" routerLink="/home">Already have an Account</a> <br/><br/>
+
+  </form>
+
+  

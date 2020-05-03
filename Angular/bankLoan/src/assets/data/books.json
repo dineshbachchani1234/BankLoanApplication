@@ -1,0 +1,47 @@
+[
+
+    {
+        "firstName":"dinesh",
+        "password":"dinesh@123",
+        "email":"bachchani@gmail.com",
+        "mobile":9898989898,
+        "type":"saving",
+        "adhar":989898989898,
+        "pan":"Gujs212",
+        "balance":82722
+
+    },
+    {
+        "firstName":"ashhas",
+        "password":"nsajaskh@123",
+        "email":"baahvasjh@gmail.com",
+        "mobile":9892222898,
+        "type":"current",
+        "adhar":989111122298,
+        "pan":"Gujs2sas",
+        "balance":822
+
+    },
+    {
+        "firstName":"ram",
+        "password":"dash@123",
+        "email":"bwwwhani@gmail.com",
+        "mobile":7777989898,
+        "type":"saving",
+        "adhar":911118989898,
+        "pan":"Gujs212",
+        "balance":822
+
+    },
+    {
+        "firstName":"TAM",
+        "password":"dinesaaaah@123",
+        "email":"bachchanaaaaaai@gmail.com",
+        "mobile":9888889898,
+        "type":"saving",
+        "adhar":9894444489898,
+        "pan":"Ups212",
+        "balance":827222
+
+    }
+]

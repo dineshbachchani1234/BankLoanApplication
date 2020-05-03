@@ -1,0 +1,20 @@
+.mrgn
+{
+    margin-left: 6%;
+    margin-right: 6%;
+}
+.h {
+    width: 100%;
+    height: 100%;
+    background-image: url('/../../assets/images/BG2.webp');
+    background-repeat: no-repeat;
+    background-position:center;
+    
+    margin-top: 2px;
+    background-size:cover;
+}
+.d
+{
+    text-align: right;
+    color:firebrick;
+}

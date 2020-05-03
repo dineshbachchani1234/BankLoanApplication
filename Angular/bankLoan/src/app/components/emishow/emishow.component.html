@@ -1,0 +1,21 @@
+<app-login-header></app-login-header>
+<!-- App login header is header which will present through out the app after LoggedIn into the application
+It will contain Welcome and Signout option -->
+<br/>
+<br/>
+<div class="col-md-10 col-lg-10">
+<img class="a1" src="assets/images/emishow.png">
+    <h3 class="add">Time to Know your Monthly EMI</h3>
+    <br/>
+    <div class="text-right">
+        <!-- button with (click) used to call the knowemi() when the button is being pressed -->
+        <button class="btn btn-success" (click)="knowemi()">Know your Monthly EMI</button>&nbsp;&nbsp;
+        <!-- route to the login page -->
+        <a class="btn btn-primary" routerLink="/login">Back to Menu</a>
+<br/><br/>
+        </div>
+        <!-- message to show the EMI -->
+        <h2 class="e1">Your Monthly EMI is: {{message}}</h2>
+        
+        </div>
+        
